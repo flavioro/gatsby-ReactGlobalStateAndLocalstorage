@@ -1,7 +1,11 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+//  and gatsby-ssr.js
+const React = require('react')
+const { ScoreProvider } = require('./src/context/score-context')
 
-// You can delete this file if you're not using it
+exports.wrapRootElement = ({ element }) => {
+  return (
+    <ScoreProvider>
+      {element}
+    </ScoreProvider>
+  )
+}
